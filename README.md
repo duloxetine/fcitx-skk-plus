@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # fcitx-skk
 
 fcitx-skk is an input method engine for Fcitx, which uses libskk as its backend.
@@ -14,3 +15,9 @@ Build dependency:
 You can specify the skk dictionary path by -DSKK_DEFAULT_PATH=path_you_want
 
 By default it's /usr/share/skk/SKK-JISYO.L
+=======
+fcitx-skk-plus
+==============
+
+my humble change
+>>>>>>> refs/remotes/origin/master
