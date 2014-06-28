@@ -6,6 +6,8 @@ option(ENABLE_QT "Enable Qt for GUI configuration" On)
 
 find_package(Fcitx 4.2.8 REQUIRED)
 include(FindPkgConfig)
+include(FcitxMacro)
+
 pkg_check_modules(LIBSKK "libskk" REQUIRED)
 _fcitx_add_uninstall_target()
 
