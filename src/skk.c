@@ -437,7 +437,7 @@ FcitxSkkCreate(FcitxInstance *instance)
 
     FcitxSkkApplyConfig(skk);
 
-    FcitxInstanceRegisterIMv2(instance, skk, "skk", _("Skk"), "skk",
+    FcitxInstanceRegisterIMv2(instance, skk, "skk", _("SKK"), "skk",
                               skk_iface, 1, "ja");
 
 #define INIT_MENU(VARNAME, NAME, I18NNAME, STATUS_NAME, STATUS_ARRAY, SIZE) \
@@ -472,7 +472,7 @@ FcitxSkkCreate(FcitxInstance *instance)
     skk->notify_preedit_handler = g_signal_connect(skk->context, "notify::preedit", G_CALLBACK(skk_candidate_update_preedit_cb), skk);
     skk->retrieve_surrounding_text_handler = g_signal_connect(skk->context, "retrieve_surrounding_text", G_CALLBACK(skk_context_retrieve_surrounding_text_cb), skk);
     skk->delete_surrounding_text_handler = g_signal_connect(skk->context, "delete_surrounding_text", G_CALLBACK(skk_context_delete_surrounding_text_cb), skk);
-
+    skk->mode = skk_context_get_input_mode(skk->context);
 
     gchar* AUTO_START_HENKAN_KEYWORDS[] = {
         "を", "、", "。", "．", "，", "？", "」",
@@ -514,10 +514,11 @@ FcitxSkkInit(void *arg)
     FcitxSkk *skk = (FcitxSkk*)arg;
     if (!arg)
         return false;
-    FcitxInstanceSetContext(skk->owner, CONTEXT_IM_KEYBOARD_LAYOUT, "ja");
-    boolean flag = true;
+    // FcitxInstanceSetContext(skk->owner, CONTEXT_IM_KEYBOARD_LAYOUT, "ja");
+    boolean flag = false;
+    FcitxInstanceSetContext(skk->owner, CONTEXT_DISABLE_AUTOENG, &flag); 
+    flag = true;
     FcitxInstanceSetContext(skk->owner, CONTEXT_IM_KEYBOARD_LAYOUT, "jp");
-    FcitxInstanceSetContext(skk->owner, CONTEXT_DISABLE_AUTOENG, &flag);
     FcitxInstanceSetContext(skk->owner, CONTEXT_DISABLE_QUICKPHRASE, &flag);
     FcitxInstanceSetContext(skk->owner, CONTEXT_DISABLE_FULLWIDTH, &flag);
     FcitxInstanceSetContext(skk->owner, CONTEXT_DISABLE_AUTO_FIRST_CANDIDATE_HIGHTLIGHT, &flag);
@@ -541,6 +542,7 @@ FcitxSkkDoInputReal(void *arg, FcitxKeySym sym, unsigned int state)
     FcitxSkk *skk = (FcitxSkk*)arg;
     // Filter out unnecessary modifier bits
     // FIXME: should resolve virtual modifiers
+    boolean send = false;
 
     if (skk_candidate_list_get_page_visible(skk_context_get_candidates(skk->context))) {
         INPUT_RETURN_VALUE result = FcitxSkkDoCandidate (skk, sym, state);
@@ -558,12 +560,33 @@ FcitxSkkDoInputReal(void *arg, FcitxKeySym sym, unsigned int state)
 
     g_object_unref(key);
 
-    if (output && strlen(output) > 0) {
+
+    if (skk->mode != skk_context_get_input_mode(skk->context)) {
+      skk->mode = skk_context_get_input_mode(skk->context);
+      return IRV_DO_NOTHING;
+    }
+
+    if (output && strlen(output) > 1) {
         FcitxInstanceCommitString(skk->owner, FcitxInstanceGetCurrentIC(skk->owner), output);
+        send = true;
     }
 
     g_free(output);
-    return retval ? (skk->updatePreedit || skk->update_candidate ?  IRV_DISPLAY_CANDWORDS : IRV_DO_NOTHING) : IRV_TO_PROCESS;
+
+    if (retval) {
+      if (skk->updatePreedit || skk->update_candidate) {
+        return IRV_DISPLAY_CANDWORDS;
+      } else {
+        if (send == true) {
+          return IRV_DO_NOTHING;
+        } else {
+          return IRV_TO_PROCESS;
+        }
+      }
+    } else {
+      return IRV_TO_PROCESS;
+    }
+    //return retval ? (skk->updatePreedit || skk->update_candidate ? IRV_DISPLAY_CANDWORDS : IRV_DO_NOTHING) : IRV_TO_PROCESS;
 }
 
 static INPUT_RETURN_VALUE

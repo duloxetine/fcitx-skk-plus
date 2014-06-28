@@ -50,6 +50,7 @@ typedef struct {
     boolean selected;
     boolean updatePreedit;
     boolean update_candidate;
+  SkkInputMode mode;  
     FcitxSkkConfig config;
     FcitxUIMenu inputModeMenu;
     gulong handler;
