@@ -56,3 +56,4 @@ __pycache__/
 *.x86_64
 *.hex
 >>>>>>> refs/remotes/origin/master
+/README.html
