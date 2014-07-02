@@ -1,7 +1,7 @@
 [Addon]
 Name=fcitx-skk
-_GeneralName=Skk
-_Comment=Skk Input Method For Fcitx
+_GeneralName=SKK
+_Comment=SKK Input Method For Fcitx
 Category=InputMethod
 Enabled=True
 Library=fcitx-skk.so
