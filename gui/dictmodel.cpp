@@ -28,7 +28,7 @@
 
 DictModel::DictModel(QObject* parent) : QAbstractListModel(parent)
 {
-    m_requiredKeys << "file" << "type" << "mode";
+  m_requiredKeys << "file" << "type" << "mode" << "host" << "port";
 }
 
 DictModel::~DictModel()
@@ -71,9 +71,6 @@ void DictModel::load(QFile& file)
     while (!(bytes = file.readLine()).isEmpty()) {
         QString line = QString::fromUtf8(bytes).trimmed();
         QStringList items = line.split(",");
-        if (items.size() < m_requiredKeys.size()) {
-            continue;
-        }
 
         bool failed = false;
         QMap<QString, QString> dict;
@@ -83,16 +80,13 @@ void DictModel::load(QFile& file)
                 break;
             }
             QString key = item.section('=', 0, 0);
-            QString value = item.section('=', 1, -1);
+            QString value = item.section('=', 1, 1);
 
-            if (!m_requiredKeys.contains(key)) {
-                continue;
-            }
 
             dict[key] = value;
         }
 
-        if (!failed && m_requiredKeys.size() == dict.size()) {
+        if (!failed) {
             m_dicts << dict;
         }
     }
@@ -178,7 +172,8 @@ QVariant DictModel::data(const QModelIndex& index, int role) const
             if (m_dicts[index.row()]["type"] == "file") {
                 return m_dicts[index.row()]["file"];
             } else {
-                return QString("%1:%2").arg(m_dicts[index.row()]["host"], m_dicts[index.row()]["port"]);
+              return QString("%1:%2").arg(m_dicts[index.row()]["host"]).arg(m_dicts[index.row()]["port"]);
+              // return m_dicts[index.row()]["host"];
             }
     }
     return QVariant();
