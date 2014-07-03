@@ -110,6 +110,8 @@ bool DictModel::save()
     Q_FOREACH(const DictType& dict, m_dicts) {
         boolean first = true;
         Q_FOREACH(const QString& key, dict.keys()) {
+          if (key == "")
+            continue;
             if (first) {
                 first = false;
             } else {
