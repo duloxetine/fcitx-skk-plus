@@ -1,7 +1,2 @@
 install(FILES skk.png DESTINATION share/icons/hicolor/64x64/apps RENAME fcitx-skk.png)
 install(FILES skk.png DESTINATION share/fcitx/imicon)
-install(FILES hi.png DESTINATION share/icons/hicolor/24x24/status)
-install(FILES ka.png DESTINATION share/icons/hicolor/24x24/status)
-install(FILES ha.png DESTINATION share/icons/hicolor/24x24/status)
-install(FILES l.png DESTINATION share/icons/hicolor/24x24/status)
-install(FILES L.png DESTINATION share/icons/hicolor/24x24/status)
