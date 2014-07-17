@@ -61,6 +61,15 @@ typedef struct {
     gulong delete_surrounding_text_handler;
 } FcitxSkk;
 
+typedef struct _SkinTrayIconJ {
+  char* hiragana;
+  char* katakana;
+  char* halfwidthkatakana;
+  char* latin;
+  char* widelatin;
+} SkinTrayIconJ;
+
+
 CONFIG_BINDING_DECLARE(FcitxSkkConfig);
 
 #endif
