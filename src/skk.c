@@ -47,7 +47,6 @@ static void FcitxSkkReloadConfig(void *arg);
 static boolean FcitxSkkLoadDictionary(FcitxSkk* skk);
 static boolean FcitxSkkLoadRule(FcitxSkk* skk);
 static void FcitxSkkApplyConfig(FcitxSkk* skk);
-static void load_status_icon(FcitxSkk* skk);
 
 CONFIG_DEFINE_LOAD_AND_SAVE(Skk, FcitxSkkConfig, "fcitx-skk")
 
@@ -97,7 +96,7 @@ SkkStatus input_mode_status[] = {
     {"",  "\xe3\x81\x82", N_("Hiragana") },
     {"", "\xe3\x82\xa2", N_("Katakana") },
     {"", "\xef\xbd\xb1", N_("Half width Katakana") },
-    {"", "A", N_("Latin") },
+    {"", "_A", N_("Latin") },
     {"", "\xef\xbc\xa1", N_("Wide latin") },
 };
 
@@ -467,8 +466,6 @@ FcitxSkkCreate(FcitxInstance *instance)
 
     INIT_MENU(skk->inputModeMenu, InputMode, _("Input Mode"), "skk-input-mode", input_mode_status, SKK_INPUT_MODE_LAST);
 
-    load_status_icon(skk);
-
     skk->handler = g_signal_connect(skk->context, "notify::input-mode", G_CALLBACK(_skk_input_mode_changed_cb), skk);
     FcitxSkkUpdateInputMode(skk);
     skk->candidate_selected_handler = g_signal_connect(skk_context_get_candidates(skk->context), "selected", G_CALLBACK(skk_candidate_list_selected_cb), skk);
@@ -493,12 +490,6 @@ FcitxSkkCreate(FcitxInstance *instance)
 
     return skk;
 }
-
-static void load_status_icon(FcitxSkk *skk)
-{
-  FcitxAddon *classicuiaddon = Fcitx_ClassicUI_GetAddon(skk->owner);
-}
-
 
 static void
 FcitxSkkDestroy(void *arg)
