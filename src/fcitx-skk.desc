@@ -8,6 +8,11 @@ Enum1=Latin
 Enum2=Wide latin
 Enum3=Wide latin Japanese
 
+[General/PunctuationQuestionExclamationMark]
+Type=Boolean
+Description=Punctuation Style ?! is HalfWidth
+DefaultValue=True
+
 [General/InitialInputMode]
 Type=Enum
 Description=Initial Input Mode
