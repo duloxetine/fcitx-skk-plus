@@ -57,12 +57,3 @@ __pycache__/
 *.hex
 >>>>>>> refs/remotes/origin/master
 /README.html
-/src/CMakeFiles/
-/src/Makefile
-/src/cmake_install.cmake
-/src/config.h
-/src/data/
-/src/fcitx_cmake_cache/
-/src/gui/
-/src/install_manifest.txt
-/src/po/
