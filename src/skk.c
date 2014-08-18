@@ -543,9 +543,6 @@ FcitxSkkDoInputReal(void *arg, FcitxKeySym sym, unsigned int state)
     // FIXME: should resolve virtual modifiers
     boolean send = false;
 
-    if (skk->config.punctuationQuestionExclamationMark && strchr("?!", FcitxKeySymToUnicode(sym)))
-      return IRV_TO_PROCESS;
-
     if (skk_candidate_list_get_page_visible(skk_context_get_candidates(skk->context))) {
         INPUT_RETURN_VALUE result = FcitxSkkDoCandidate (skk, sym, state);
         if (result == IRV_TO_PROCESS)
@@ -554,14 +551,14 @@ FcitxSkkDoInputReal(void *arg, FcitxKeySym sym, unsigned int state)
 
     SkkModifierType modifiers = (SkkModifierType) state & (FcitxKeyState_SimpleMask | (1 << 30));
     SkkKeyEvent* key = skk_key_event_new_from_x_keysym(sym, modifiers, NULL);
-
     if (!key)
-      return IRV_TO_PROCESS;
+        return IRV_TO_PROCESS;
 
     gboolean retval = skk_context_process_key_event(skk->context, key);
     gchar* output = skk_context_poll_output(skk->context);
 
     g_object_unref(key);
+
 
     if (skk->mode != skk_context_get_input_mode(skk->context)) {
       skk->mode = skk_context_get_input_mode(skk->context);

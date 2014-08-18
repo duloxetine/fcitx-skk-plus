@@ -21,7 +21,6 @@
 
 CONFIG_BINDING_BEGIN(FcitxSkkConfig)
 CONFIG_BINDING_REGISTER("General", "PunctuationStyle", punctuationStyle)
-CONFIG_BINDING_REGISTER("General", "PunctuationQuestionExclamationMark", punctuationQuestionExclamationMark)
 CONFIG_BINDING_REGISTER("General", "InitialInputMode", initialInputMode)
 CONFIG_BINDING_REGISTER("General", "PageSize", pageSize)
 CONFIG_BINDING_REGISTER("General", "CandidateLayout", candidateLayout)

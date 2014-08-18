@@ -42,7 +42,6 @@ typedef struct _FcitxSkkConfig {
     int pageSize;
     boolean showAnnotation;
     boolean eggLikeNewLine;
-  boolean punctuationQuestionExclamationMark;
 } FcitxSkkConfig;
 
 typedef struct {
