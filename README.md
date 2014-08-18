@@ -20,7 +20,26 @@ Githubがよくわかっていなかったので、新規にリポジトリを�
 
 今日のちょっとした修正をするのに、3.〜5.を何十回繰り返したことか。
 
-平成26年6月28日(土)
+## Ubuntu(Kubuntu)でのインストール
+
+Ubuntu(Kubuntu)でインストールするのに以下のインストールが必要でした。
+
+- sudo apt-get install cmake
+- sudo apt-get install fcitx-libs-qt
+- sudo apt-get install kde-config-fcitx
+- sudo apt-get install fcitx-libs-dev
+- sudo apt-get install libskk0
+- sudo apt-get install libskk-common 
+- sudo apt-get install libskk-dev
+- sudo apt-get install fcitx-libs-dev
+- sudo apt-get install fcitx-libs-qt
+- sudo apt-get install qt4-qmake
+- sudo apt-get install qt4-default
+- sudo apt-get install fcitx-qt
+- sudo apt-get install fcitx-libs-qt
+- sudo apt-get install fcitx-frontend-qt4
+
+2014-8-18(Mon)
 duloxetine(渡邉慶一)
 
 # fcitx-skk
