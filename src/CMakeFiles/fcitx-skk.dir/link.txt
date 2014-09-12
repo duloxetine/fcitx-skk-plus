@@ -1,0 +1,1 @@
+/usr/bin/cc  -fPIC -Wall -Wextra -Wno-sign-compare -Wno-unused-parameter -fvisibility=hidden  -Wl,--as-needed   -shared -Wl,-soname,fcitx-skk.so -o fcitx-skk.so CMakeFiles/fcitx-skk.dir/skk.c.o CMakeFiles/fcitx-skk.dir/skk-config.c.o -lskk -lgio-2.0 -lgee -lgobject-2.0 -lglib-2.0 

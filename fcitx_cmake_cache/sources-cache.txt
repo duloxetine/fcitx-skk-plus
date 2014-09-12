@@ -1,0 +1,11 @@
+generic src/fcitx-skk.conf.in
+generic src/skk.conf.in
+generic src/fcitx-skk.desc
+generic src/skk.c
+generic src/skk-config.c
+generic src/skk.h
+generic gui/main.cpp
+generic gui/dictwidget.cpp
+generic gui/adddictdialog.cpp
+generic gui/dictmodel.cpp
+generic gui/rulemodel.cpp

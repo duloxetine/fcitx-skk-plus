@@ -1,0 +1,2 @@
+type=file,file=$FCITX_CONFIG_DIR/skk/user.dict,mode=readwrite
+type=file,file=/usr/share/skk/SKK-JISYO.L,mode=readonly

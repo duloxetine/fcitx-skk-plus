@@ -1,0 +1,4 @@
+ja /home/keiichi/Git/fcitx-skk-plus/po/ja.po
+de /home/keiichi/Git/fcitx-skk-plus/po/de.po
+vi /home/keiichi/Git/fcitx-skk-plus/po/vi.po
+zh_CN /home/keiichi/Git/fcitx-skk-plus/po/zh_CN.po

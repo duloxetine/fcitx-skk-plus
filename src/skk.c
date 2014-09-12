@@ -565,7 +565,7 @@ FcitxSkkDoInputReal(void *arg, FcitxKeySym sym, unsigned int state)
       return IRV_DO_NOTHING;
     }
 
-    if (output && strlen(output) > 1) {
+    if (output && strlen(output) > 0) {
         FcitxInstanceCommitString(skk->owner, FcitxInstanceGetCurrentIC(skk->owner), output);
         send = true;
     }
