@@ -557,6 +557,7 @@ FcitxSkkDoInputReal(void *arg, FcitxKeySym sym, unsigned int state)
     gboolean retval = skk_context_process_key_event(skk->context, key);
     gchar* output = skk_context_poll_output(skk->context);
 
+
     g_object_unref(key);
 
 
@@ -583,11 +584,7 @@ FcitxSkkDoInputReal(void *arg, FcitxKeySym sym, unsigned int state)
         }
       }
     } else {
-      if (skk->updatePreedit || skk->update_candidate) {
-        return IRV_DISPLAY_CANDWORDS;
-      } else {
         return IRV_TO_PROCESS;
-      }
     }
     //return retval ? (skk->updatePreedit || skk->update_candidate ? IRV_DISPLAY_CANDWORDS : IRV_DO_NOTHING) : IRV_TO_PROCESS;
 }
