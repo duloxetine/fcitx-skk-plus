@@ -256,7 +256,7 @@ boolean FcitxSkkLoadDictionary(FcitxSkk* skk)
                 }
             }
 
-            encoding = encoding ? encoding : "EUC-JP";
+            encoding = encoding ? encoding : "UTF-8";
 
             if (type == FSDT_Invalid) {
                 break;
