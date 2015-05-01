@@ -584,7 +584,11 @@ FcitxSkkDoInputReal(void *arg, FcitxKeySym sym, unsigned int state)
         }
       }
     } else {
+      if (skk->updatePreedit || skk->update_candidate) {
+        return IRV_DISPLAY_CANDWORDS;
+      } else {
         return IRV_TO_PROCESS;
+      }
     }
     //return retval ? (skk->updatePreedit || skk->update_candidate ? IRV_DISPLAY_CANDWORDS : IRV_DO_NOTHING) : IRV_TO_PROCESS;
 }
@@ -615,7 +619,10 @@ INPUT_RETURN_VALUE FcitxSkkDoCandidate(void* arg, FcitxKeySym sym, unsigned int 
         return IRV_TO_PROCESS;
     } else if (FcitxCandidateWordCheckChooseKey(candList, sym, state) >= 0) {
         return IRV_TO_PROCESS;
+    } else if (FcitxHotkeyIsHotKeyDigit(sym, 0)) {
+        return IRV_TO_PROCESS;
     }
+
     return IRV_DO_NOTHING;
 }
 
