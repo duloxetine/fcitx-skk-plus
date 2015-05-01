@@ -611,6 +611,7 @@ INPUT_RETURN_VALUE FcitxSkkDoCandidate(void* arg, FcitxKeySym sym, unsigned int 
     FcitxGlobalConfig *fc = FcitxInstanceGetGlobalConfig(skk->owner);
     FcitxCandidateWordList* candList = FcitxInputStateGetCandidateList(input);
 
+    state = 0; /* Hot Fix */
     if (FcitxHotkeyIsHotKey(sym, state,
                             FcitxConfigPrevPageKey(skk->owner, fc))) {
         return IRV_TO_PROCESS;
@@ -619,7 +620,7 @@ INPUT_RETURN_VALUE FcitxSkkDoCandidate(void* arg, FcitxKeySym sym, unsigned int 
         return IRV_TO_PROCESS;
     } else if (FcitxCandidateWordCheckChooseKey(candList, sym, state) >= 0) {
         return IRV_TO_PROCESS;
-    } else if (FcitxHotkeyIsHotKeyDigit(sym, 0)) {
+    } else if (FcitxHotkeyIsHotKeyDigit(sym, state)) {
         return IRV_TO_PROCESS;
     }
 
