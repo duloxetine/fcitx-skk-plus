@@ -20,12 +20,13 @@
 #ifndef FCITX_SKK_GUI_MAIN_H_
 #define FCITX_SKK_GUI_MAIN_H_
 
-#include <fcitx-qt/fcitxqtconfiguiplugin.h>
+#include <fcitxqtconfiguiplugin.h>
 
 class SkkConfigPlugin : public FcitxQtConfigUIPlugin
 {
     Q_OBJECT
 public:
+    Q_PLUGIN_METADATA(IID FcitxQtConfigUIFactoryInterface_iid FILE "skk-config.json")
     explicit SkkConfigPlugin(QObject* parent = 0);
     virtual QString name();
     virtual QStringList files();

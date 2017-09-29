@@ -20,7 +20,7 @@
 #ifndef FCITX_SKK_GUI_DICTWIDGET_H
 #define FCITX_SKK_GUI_DICTWIDGET_H
 
-#include <fcitx-qt/fcitxqtconfiguiwidget.h>
+#include <fcitxqtconfiguiwidget.h>
 
 class RuleModel;
 class DictModel;

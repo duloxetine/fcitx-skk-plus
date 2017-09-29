@@ -27,8 +27,8 @@ if(NOT DEFINED LOCALEDIR)
 endif()
 
 if (ENABLE_QT)
-find_package(Qt 4.8 REQUIRED)
-pkg_check_modules(FCITX_QT "fcitx-qt>=4.2.8" REQUIRED)
+find_package(Qt5 5.7 REQUIRED COMPONENTS Core Gui Widgets)
+find_package(FcitxQt5WidgetsAddons 1.1 REQUIRED)
 endif ()
 
 configure_file("${CMAKE_CURRENT_SOURCE_DIR}/config.h.in"
