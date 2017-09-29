@@ -58,6 +58,3 @@ QString SkkConfigPlugin::domain()
 {
     return "fcitx-skk";
 }
-
-
-Q_EXPORT_PLUGIN2(fcitx_skk_config, SkkConfigPlugin)
