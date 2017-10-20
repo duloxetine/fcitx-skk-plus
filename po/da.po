@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fcitx\n"
 "Report-Msgid-Bugs-To: fcitx-dev@googlegroups.com\n"
-"POT-Creation-Date: 2017-10-19 08:03-0700\n"
-"PO-Revision-Date: 2017-10-19 12:04+0000\n"
+"POT-Creation-Date: 2017-10-20 00:03-0700\n"
+"PO-Revision-Date: 2017-10-19 23:42+0000\n"
 "Last-Translator: scootergrisen\n"
 "Language-Team: Danish (http://www.transifex.com/fcitx/fcitx/language/da/)\n"
 "Language: da\n"
@@ -90,7 +90,7 @@ msgstr "Indledende inputtilstand"
 
 #: src/skk.c:466
 msgid "Input Mode"
-msgstr "Inputmetode"
+msgstr "Inputtilstand"
 
 #: src/fcitx-skk.desc:6
 msgid "Japanese"
