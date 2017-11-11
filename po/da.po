@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fcitx\n"
 "Report-Msgid-Bugs-To: fcitx-dev@googlegroups.com\n"
-"POT-Creation-Date: 2017-10-20 00:03-0700\n"
-"PO-Revision-Date: 2017-10-19 23:42+0000\n"
+"POT-Creation-Date: 2017-11-10 16:03-0800\n"
+"PO-Revision-Date: 2017-11-10 22:10+0000\n"
 "Last-Translator: scootergrisen\n"
 "Language-Team: Danish (http://www.transifex.com/fcitx/fcitx/language/da/)\n"
 "Language: da\n"
@@ -126,7 +126,7 @@ msgstr "Qwerty-midterrække (a,s,d,...)"
 
 #: src/fcitx-skk.desc:31
 msgid "Return-key does not insert new line on commit"
-msgstr "Returtast indsætter ikke linjeskift ved begå"
+msgstr "Returtast indsætter ikke linjeskift ved udfør"
 
 #: gui/adddictdialog.cpp:101 gui/adddictdialog.cpp:113
 msgid "Select Dictionary File"
