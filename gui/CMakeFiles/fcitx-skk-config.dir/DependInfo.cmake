@@ -1,43 +1,49 @@
 # The set of languages for which implicit dependencies are needed:
-SET(CMAKE_DEPENDS_LANGUAGES
+set(CMAKE_DEPENDS_LANGUAGES
   "CXX"
   )
 # The set of files for implicit dependencies of each language:
-SET(CMAKE_DEPENDS_CHECK_CXX
+set(CMAKE_DEPENDS_CHECK_CXX
   "/home/keiichi/Git/fcitx-skk-plus/gui/adddictdialog.cpp" "/home/keiichi/Git/fcitx-skk-plus/gui/CMakeFiles/fcitx-skk-config.dir/adddictdialog.cpp.o"
   "/home/keiichi/Git/fcitx-skk-plus/gui/dictmodel.cpp" "/home/keiichi/Git/fcitx-skk-plus/gui/CMakeFiles/fcitx-skk-config.dir/dictmodel.cpp.o"
   "/home/keiichi/Git/fcitx-skk-plus/gui/dictwidget.cpp" "/home/keiichi/Git/fcitx-skk-plus/gui/CMakeFiles/fcitx-skk-config.dir/dictwidget.cpp.o"
-  "/home/keiichi/Git/fcitx-skk-plus/gui/fcitx-skk-config_automoc.cpp" "/home/keiichi/Git/fcitx-skk-plus/gui/CMakeFiles/fcitx-skk-config.dir/fcitx-skk-config_automoc.cpp.o"
+  "/home/keiichi/Git/fcitx-skk-plus/gui/fcitx-skk-config_autogen/moc_compilation.cpp" "/home/keiichi/Git/fcitx-skk-plus/gui/CMakeFiles/fcitx-skk-config.dir/fcitx-skk-config_autogen/moc_compilation.cpp.o"
   "/home/keiichi/Git/fcitx-skk-plus/gui/main.cpp" "/home/keiichi/Git/fcitx-skk-plus/gui/CMakeFiles/fcitx-skk-config.dir/main.cpp.o"
   "/home/keiichi/Git/fcitx-skk-plus/gui/rulemodel.cpp" "/home/keiichi/Git/fcitx-skk-plus/gui/CMakeFiles/fcitx-skk-config.dir/rulemodel.cpp.o"
   )
-SET(CMAKE_CXX_COMPILER_ID "GNU")
+set(CMAKE_CXX_COMPILER_ID "GNU")
 
 # Preprocessor definitions for this target.
-SET(CMAKE_TARGET_DEFINITIONS
+set(CMAKE_TARGET_DEFINITIONS_CXX
+  "QT_CORE_LIB"
+  "QT_GUI_LIB"
+  "QT_NO_DEBUG"
   "QT_NO_KEYWORDS"
-  )
-
-# Targets to which this target links.
-SET(CMAKE_TARGET_LINKED_INFO_FILES
+  "QT_WIDGETS_LIB"
   )
 
 # The include file search paths:
-SET(CMAKE_C_TARGET_INCLUDE_PATH
+set(CMAKE_CXX_TARGET_INCLUDE_PATH
+  "gui/fcitx-skk-config_autogen/include"
   "/usr/include/cairo"
   "/usr/include/fcitx"
   "."
   "/usr/include/skk-1.0"
-  "/usr/include/gee-1.0"
   "/usr/include/glib-2.0"
-  "/usr/lib/i386-linux-gnu/glib-2.0/include"
-  "/usr/include/qt4"
-  "/usr/include/qt4/QtCore"
-  "/usr/include/qt4/QtDBus"
-  "/usr/include/qt4/QtGui"
-  "/usr/include/qt4/QtXml"
+  "/usr/lib64/glib-2.0/include"
+  "/usr/include/gee-0.8"
   "gui"
+  "/usr/include/qt5"
+  "/usr/include/qt5/QtCore"
+  "/usr/lib64/qt5/mkspecs/linux-g++"
+  "/usr/include/qt5/QtWidgets"
+  "/usr/include/qt5/QtGui"
+  "/usr/include/FcitxQt5/FcitxQtWidgetsAddons"
   )
-SET(CMAKE_CXX_TARGET_INCLUDE_PATH ${CMAKE_C_TARGET_INCLUDE_PATH})
-SET(CMAKE_Fortran_TARGET_INCLUDE_PATH ${CMAKE_C_TARGET_INCLUDE_PATH})
-SET(CMAKE_ASM_TARGET_INCLUDE_PATH ${CMAKE_C_TARGET_INCLUDE_PATH})
+
+# Targets to which this target links.
+set(CMAKE_TARGET_LINKED_INFO_FILES
+  )
+
+# Fortran module output directory.
+set(CMAKE_Fortran_TARGET_MODULE_DIR "")
