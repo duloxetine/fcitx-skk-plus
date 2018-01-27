@@ -256,7 +256,7 @@ boolean FcitxSkkLoadDictionary(FcitxSkk* skk)
                 }
             }
 
-            encoding = encoding ? encoding : "EUC-JP";
+            encoding = encoding ? encoding : "UTF-8";
 
             if (type == FSDT_Invalid) {
                 break;
@@ -557,6 +557,7 @@ FcitxSkkDoInputReal(void *arg, FcitxKeySym sym, unsigned int state)
     gboolean retval = skk_context_process_key_event(skk->context, key);
     gchar* output = skk_context_poll_output(skk->context);
 
+
     g_object_unref(key);
 
 
@@ -583,7 +584,11 @@ FcitxSkkDoInputReal(void *arg, FcitxKeySym sym, unsigned int state)
         }
       }
     } else {
-      return IRV_TO_PROCESS;
+      if (skk->updatePreedit || skk->update_candidate) {
+        return IRV_DISPLAY_CANDWORDS;
+      } else {
+        return IRV_TO_PROCESS;
+      }
     }
     //return retval ? (skk->updatePreedit || skk->update_candidate ? IRV_DISPLAY_CANDWORDS : IRV_DO_NOTHING) : IRV_TO_PROCESS;
 }
@@ -606,6 +611,7 @@ INPUT_RETURN_VALUE FcitxSkkDoCandidate(void* arg, FcitxKeySym sym, unsigned int 
     FcitxGlobalConfig *fc = FcitxInstanceGetGlobalConfig(skk->owner);
     FcitxCandidateWordList* candList = FcitxInputStateGetCandidateList(input);
 
+    state = 0; /* Hot Fix */
     if (FcitxHotkeyIsHotKey(sym, state,
                             FcitxConfigPrevPageKey(skk->owner, fc))) {
         return IRV_TO_PROCESS;
@@ -614,7 +620,10 @@ INPUT_RETURN_VALUE FcitxSkkDoCandidate(void* arg, FcitxKeySym sym, unsigned int 
         return IRV_TO_PROCESS;
     } else if (FcitxCandidateWordCheckChooseKey(candList, sym, state) >= 0) {
         return IRV_TO_PROCESS;
+    } else if (FcitxHotkeyIsHotKeyDigit(sym, state)) {
+        return IRV_TO_PROCESS;
     }
+
     return IRV_DO_NOTHING;
 }
 

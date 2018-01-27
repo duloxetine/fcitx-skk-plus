@@ -7,6 +7,6 @@ file(REMOVE_RECURSE
 )
 
 # Per-language clean rules from dependency scanning.
-foreach(lang )
+foreach(lang)
   include(CMakeFiles/fcitx-compile-mo.target.dir/cmake_clean_${lang}.cmake OPTIONAL)
 endforeach()

@@ -57,3 +57,5 @@ __pycache__/
 *.hex
 >>>>>>> refs/remotes/origin/master
 /README.html
+/CMakeCache.txt
+/CMakeFiles/3.0.2/
