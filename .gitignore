@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 *~
 build*/
 .*
@@ -31,7 +30,7 @@ __pycache__/
 *.pyc
 *.pya
 *.fdb_latexmk
-=======
+
 # Object files
 *.o
 *.ko
@@ -55,7 +54,7 @@ __pycache__/
 *.i*86
 *.x86_64
 *.hex
->>>>>>> refs/remotes/origin/master
+
 /README.html
 /CMakeCache.txt
 /CMakeFiles/3.0.2/
@@ -70,5 +69,3 @@ cmake_install.cmake
 install_manifest.txt
 compile_commands.json
 CTestTestfile.cmake
-
-
