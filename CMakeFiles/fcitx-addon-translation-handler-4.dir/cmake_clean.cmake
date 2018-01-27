@@ -1,8 +1,8 @@
-FILE(REMOVE_RECURSE
+file(REMOVE_RECURSE
   "CMakeFiles/fcitx-addon-translation-handler-4"
 )
 
 # Per-language clean rules from dependency scanning.
-FOREACH(lang)
-  INCLUDE(CMakeFiles/fcitx-addon-translation-handler-4.dir/cmake_clean_${lang}.cmake OPTIONAL)
-ENDFOREACH(lang)
+foreach(lang )
+  include(CMakeFiles/fcitx-addon-translation-handler-4.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()
