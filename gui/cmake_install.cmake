@@ -32,7 +32,7 @@ if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
   set(CMAKE_INSTALL_SO_NO_EXE "0")
 endif()
 
-if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
+if("${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
   if(EXISTS "$ENV{DESTDIR}/usr/lib64/fcitx/qt/libfcitx-skk-config.so" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}/usr/lib64/fcitx/qt/libfcitx-skk-config.so")
     file(RPATH_CHECK
@@ -50,8 +50,6 @@ if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspeci
 file(INSTALL DESTINATION "/usr/lib64/fcitx/qt" TYPE MODULE FILES "/home/keiichi/Git/fcitx-skk-plus/gui/libfcitx-skk-config.so")
   if(EXISTS "$ENV{DESTDIR}/usr/lib64/fcitx/qt/libfcitx-skk-config.so" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}/usr/lib64/fcitx/qt/libfcitx-skk-config.so")
-    file(RPATH_REMOVE
-         FILE "$ENV{DESTDIR}/usr/lib64/fcitx/qt/libfcitx-skk-config.so")
     if(CMAKE_INSTALL_DO_STRIP)
       execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}/usr/lib64/fcitx/qt/libfcitx-skk-config.so")
     endif()
