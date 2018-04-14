@@ -30,3 +30,9 @@ __pycache__/
 *.pyc
 *.pya
 *.fdb_latexmk
+CMakeFiles
+Makefile
+CMakeCache.*
+*cmake_cache*
+cmake_install.cmake
+cmake-build-*
