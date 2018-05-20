@@ -229,9 +229,9 @@ gui/libfcitx-skk-config.so: gui/CMakeFiles/fcitx-skk-config.dir/rulemodel.cpp.o
 gui/libfcitx-skk-config.so: gui/CMakeFiles/fcitx-skk-config.dir/fcitx-skk-config_autogen/moc_compilation.cpp.o
 gui/libfcitx-skk-config.so: gui/CMakeFiles/fcitx-skk-config.dir/build.make
 gui/libfcitx-skk-config.so: /usr/lib64/libFcitxQt5WidgetsAddons.so.1.0
-gui/libfcitx-skk-config.so: /usr/lib64/libQt5Widgets.so.5.9.2
-gui/libfcitx-skk-config.so: /usr/lib64/libQt5Gui.so.5.9.2
-gui/libfcitx-skk-config.so: /usr/lib64/libQt5Core.so.5.9.2
+gui/libfcitx-skk-config.so: /usr/lib64/libQt5Widgets.so.5.9.4
+gui/libfcitx-skk-config.so: /usr/lib64/libQt5Gui.so.5.9.4
+gui/libfcitx-skk-config.so: /usr/lib64/libQt5Core.so.5.9.4
 gui/libfcitx-skk-config.so: gui/CMakeFiles/fcitx-skk-config.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/keiichi/Git/fcitx-skk-plus/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX shared module libfcitx-skk-config.so"
 	cd /home/keiichi/Git/fcitx-skk-plus/gui && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/fcitx-skk-config.dir/link.txt --verbose=$(VERBOSE)
