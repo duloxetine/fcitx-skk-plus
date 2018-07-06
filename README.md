@@ -67,11 +67,11 @@ fcitx-skk is an input method engine for Fcitx, which uses libskk as its backend.
 Please install this packages before build this Program.
 
  - libskk-dev
- - libqt4-dev
- - fcitx-libs-dev
+ - qtbase5-dev
+ - libfcitx-qt5-dev
  - skkdic
 
-    $ sudo aptitude install libskk-dev libqt4-dev fcitx-libs-dev skkdic
+    $ sudo aptitude install libskk-dev qtbase5-dev libfcitx-qt5-dev skkdic
 
 
 ## Build dependency:
